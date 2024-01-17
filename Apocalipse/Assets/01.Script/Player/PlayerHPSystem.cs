@@ -42,18 +42,19 @@ public class PlayerHPSystem : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy")
             && !GameManager.Instance.GetPlayerCharacter().Invincibility
             && !GameManager.Instance.bStageCleared)
-        {
+        { 
             Health -= 1;
             StartCoroutine(HitFlick());
-
-            //GameManager.Instance.SoundManager.PlaySFX("Hit");
-
-            Destroy(collision.gameObject);
-
             if (Health <= 0)
             {
                 GameManager.Instance.GetPlayerCharacter().DeadProcess();
             }
+            //GameManager.Instance.SoundManager.PlaySFX("Hit");
+            if (GetComponent<Enemy>().isdesyroy == false)
+            {
+                Destroy(collision.gameObject);
+            }
+            
         }
 
         if (collision.gameObject.CompareTag("Item"))

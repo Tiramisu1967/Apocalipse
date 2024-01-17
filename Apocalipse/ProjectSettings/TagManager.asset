@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerBullet
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -42,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2095831203
+    locked: 0
   - name: Player
     uniqueID: 944856397
+    locked: 0
+  - name: Enemy
+    uniqueID: 4040974777
     locked: 0

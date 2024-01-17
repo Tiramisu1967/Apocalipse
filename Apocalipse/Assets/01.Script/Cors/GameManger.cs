@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     static public GameManager Instance;
 
     public CharacterManager CharacterManager; //CharacterManager 선언
+    public MapManager MapManager;
     [HideInInspector] public bool bStageCleared = false;
 
     private void Awake()  // 객체 생성시 최초 실행 (그래서 싱글톤을 여기서 생성)
@@ -27,6 +28,8 @@ public class GameManager : MonoBehaviour
     {
         if (CharacterManager == null) { return; }
         CharacterManager.Init(this); //초기화/무엇이 먼저 실행 될지 모르기에/ map,sound, Item, Character은 base를 상속 받을 것. 이유는 GameManager를 상속할 것이고 GameManager에 접근하기 위해. 상호 참조/ 
+
+        MapManager.Init(this);
     }
 
     public void GameStart()

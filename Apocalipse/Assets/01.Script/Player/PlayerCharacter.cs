@@ -50,6 +50,7 @@ public class PlayerCharacter : BaseCharacter
     {
         UpdateMovement();
         UpdateSkillInput();
+
     }
 
     private void UpdateMovement()
@@ -91,6 +92,7 @@ public class PlayerCharacter : BaseCharacter
         }
 
         CurrentWeaponLevel = GameInstance.instance.CurrentPlayerWeaponLevel;
+        Debug.Log(CurrentWeaponLevel);
     }
 
 
@@ -122,7 +124,9 @@ public class PlayerCharacter : BaseCharacter
         {
             if (Skills[skillType].IsAvailable())
             {
+                CurrentWeaponLevel = GameInstance.instance.CurrentPlayerWeaponLevel;
                 Skills[skillType].Activate();
+                
             }
             //else
             //{
