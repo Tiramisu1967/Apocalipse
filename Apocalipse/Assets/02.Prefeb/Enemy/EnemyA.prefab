@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7044102185825662307, guid: 1d8043ffbc5d5b0489041db10d6268fa, type: 3}
       propertyPath: isdesyroy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8902953334632246629, guid: 1d8043ffbc5d5b0489041db10d6268fa, type: 3}
       propertyPath: m_Name
@@ -82,4 +82,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
-  Amplitude: 0
+  Amplitude: 6

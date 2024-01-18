@@ -5,6 +5,10 @@ namespace EnumTypes
         Primary = 0, Repair, Bomb
     }
 
+    public enum Boss
+    {
+        Stage1 = 1, Stage2,Stage3,
+    }
     public enum ItemName
     {
         UpgradeWeapon = 0,

@@ -28,7 +28,7 @@ public class PrimarySkill : BaseSkill
         weapons[8] = new Level3Weapon();
         weapons[9] = new Level4Weapon();
         weapons[10] = new Level5Weapon();
-        weapons[12] = new Level6Weapon();
+        weapons[11] = new Level6Weapon();
     }
 
     public override void Activate()

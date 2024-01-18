@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -50,10 +51,10 @@ public class PlayerHPSystem : MonoBehaviour
                 GameManager.Instance.GetPlayerCharacter().DeadProcess();
             }
             //GameManager.Instance.SoundManager.PlaySFX("Hit");
-            if (GetComponent<Enemy>().isdesyroy == false)
-            {
+            Enemy enemy = GetComponent<Enemy>();
+            if (enemy.isdesyroy == false)    
                 Destroy(collision.gameObject);
-            }
+            
             
         }
 
