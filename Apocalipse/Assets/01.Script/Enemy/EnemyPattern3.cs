@@ -9,16 +9,17 @@ public class EnemyPattern3 : MonoBehaviour
     public GameObject vim;
     public float ProjectileMoveSpeed = 5.0f;
     public float FireRate = 2.0f;
-    public float MoveSpeed = 2.0f;
+   
     public float MoveDistance = 5.0f;
-
+    private float MoveSpeed= 2.0f;
     private int _currentPatternIndex = 0;
     private bool _movingRight = true;
     private bool _bCanMove = false;
     private Vector3 _originPosition;
-
+    private float TemSpeed;
     private void Start()
     {
+        TemSpeed = MoveSpeed;
         _originPosition = transform.position; // Boss 생성 시 Vector3 변수 _originPosition에 transform.position를 저장
         StartCoroutine(MoveDownAndStartPattern()); //
     }
@@ -40,6 +41,16 @@ public class EnemyPattern3 : MonoBehaviour
 
     private void Update()
     {
+        Enemy enemy = GetComponent<Enemy>();
+        if (enemy.isfreeze == 1)
+        {
+            MoveSpeed = 0;
+        }
+        else
+        {
+            MoveSpeed = TemSpeed;
+        }
+
         //_bCanMove가 true라면 MoveSideways을 실행한다.(MoveDownAndStarPattern이 실행 되었을 경우(생성 되었을 때 최초 실행))
         if (_bCanMove)
             MoveSideways();
@@ -89,8 +100,8 @@ public class EnemyPattern3 : MonoBehaviour
     {
         while (true)
         {
-            MoveSideways();
-            yield return null;
+                MoveSideways();
+                yield return null;
         }
     }
 

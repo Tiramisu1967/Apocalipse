@@ -74,6 +74,9 @@ public class PlayerCharacter : BaseCharacter
         if (Input.GetKey(KeyCode.Z)) ActivateSkill(EnumTypes.PlayerSkill.Primary);
         if (Input.GetKeyUp(KeyCode.X)) ActivateSkill(EnumTypes.PlayerSkill.Repair);
         if (Input.GetKeyUp(KeyCode.C)) ActivateSkill(EnumTypes.PlayerSkill.Bomb);
+        if (Input.GetKeyUp(KeyCode.V)) ActivateSkill(EnumTypes.PlayerSkill.freeze);
+        if (Input.GetKeyUp(KeyCode.B)) ActivateSkill(EnumTypes.PlayerSkill.freeze);
+        if (Input.GetKeyUp(KeyCode.N)) ActivateSkill(EnumTypes.PlayerSkill.freeze);
     }
 
     /*
@@ -122,6 +125,7 @@ public class PlayerCharacter : BaseCharacter
     {
         if (Skills.ContainsKey(skillType))
         {
+            Debug.Log("!");
             if (Skills[skillType].IsAvailable())
             {
                 CurrentWeaponLevel = GameInstance.instance.CurrentPlayerWeaponLevel;

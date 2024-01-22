@@ -1,9 +1,15 @@
+using System.Collections;
+using UnityEditorInternal;
 using UnityEngine;
 
-public class BombSkill : BaseSkill
+public class freezeskill : BaseSkill
 {
+   
+    bool iscool = false;
     public override void Activate()
+
     {
+
         base.Activate();
 
         // 모든 Enemy 찾기
@@ -14,17 +20,17 @@ public class BombSkill : BaseSkill
             {
                 if (obj.GetComponent<BossA>())
                     return;
-
+                Debug.Log("!!!");
                 Enemy enemy = obj.GetComponent<Enemy>();
                 if (enemy != null)
                 {
-                   
-                  
-                    enemy.Dead();
 
+                    Debug.Log("?");
+                    enemy.isfreeze = 1;
                 }
             }
         }
 
     }
+
 }

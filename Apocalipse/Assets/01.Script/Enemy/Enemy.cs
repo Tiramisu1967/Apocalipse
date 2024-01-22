@@ -6,18 +6,39 @@ public class Enemy : BaseCharacter
     public float Health = 3f;
     public float AttackDamage = 1f;
     bool bIsDead = false;
+    public int isfreeze = 0;
     public bool bMustSpawnItem = false;
     public bool isdesyroy = false;
+    private float freezetime = 3;
 
     public GameObject ExplodeFX;
-
+    public float MoveSpeed = 2.0f;
+    float tmpSpeed;
     void Start()
     {
+        freezetime = 3;
+        tmpSpeed = MoveSpeed;
     }
 
     void Update()
     {
+        if (isfreeze == 1)
+        {
+            
+            Debug.Log("실행 됨 true임 진짜 ");
+            if (freezetime >= 0)
+            {
+                freezetime -= Time.deltaTime;
+                Debug.Log(freezetime);
+            } else
+            {
+                freezetime = 3;
+                isfreeze = 0;
+            }
+            
+        }
     }
+
 
     public void Dead()
     {
@@ -36,6 +57,8 @@ public class Enemy : BaseCharacter
             Destroy(gameObject);
         }
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

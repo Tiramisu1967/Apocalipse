@@ -488,6 +488,7 @@ MonoBehaviour:
   - {fileID: 9087089543219279297, guid: 309e4051c1f26c44a912a39e487cbf7a, type: 3}
   - {fileID: 9159499995884575809, guid: efd18768d2a39854a94fb4436be000c3, type: 3}
   - {fileID: 7907733135469573874, guid: 8fed4601222c80a42a6c452b2a119ae1, type: 3}
+  - {fileID: 5988830298913326898, guid: 31da889b8cdfd8549b546b56a8186724, type: 3}
   CurrentWeaponLevel: 3
   MaxWeaponLevel: 6
 --- !u!61 &469310146
@@ -519,7 +520,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2339,7 +2340,7 @@ MonoBehaviour:
   - {fileID: 1046368741}
   - {fileID: 338594266}
   - {fileID: 2101840611}
-  CoolDownTime: 2
+  CoolDownTime: 200000
   MaxSpawnEnemyCount: 2
   BossSpawnCount: 10
   Boss:
