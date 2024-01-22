@@ -489,6 +489,8 @@ MonoBehaviour:
   - {fileID: 9159499995884575809, guid: efd18768d2a39854a94fb4436be000c3, type: 3}
   - {fileID: 7907733135469573874, guid: 8fed4601222c80a42a6c452b2a119ae1, type: 3}
   - {fileID: 5988830298913326898, guid: 31da889b8cdfd8549b546b56a8186724, type: 3}
+  - {fileID: 6318425246109953517, guid: 1cd7ad1e314cd0b4792dce642a8d64b2, type: 3}
+  - {fileID: 5945149612784603208, guid: b1c90dafcc3318a428222e68b4e26a99, type: 3}
   CurrentWeaponLevel: 3
   MaxWeaponLevel: 6
 --- !u!61 &469310146

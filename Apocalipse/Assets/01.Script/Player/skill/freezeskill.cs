@@ -5,7 +5,6 @@ using UnityEngine;
 public class freezeskill : BaseSkill
 {
    
-    bool iscool = false;
     public override void Activate()
 
     {
