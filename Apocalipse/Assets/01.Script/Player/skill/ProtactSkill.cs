@@ -12,18 +12,14 @@ public class ProtactSkill : BaseSkill
         GameObject instance = Instantiate(Protactile, position, Quaternion.identity);
         Protactile protactile = instance.GetComponent<Protactile>();
 
-        if (protactile != null)
-        {
-            protactile.MoveSpeed = ProjectileMoveSpeed;
-            protactile.SetDirection(direction.normalized);
-        }
     }
 
     public override void Activate()
     {
         ProtactSkill protactSkill = this;
         CharacterManager characterManager = _characterManager;
-        Vector3 position = characterManager.Player.transform.position;
+        Vector3 pos = new (0f, 5f, 0f);
+        Vector3 position = characterManager.Player.transform.position + pos;
         protactSkill.ShootProjectile(position, Vector3.up);
     }
     

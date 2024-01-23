@@ -2342,7 +2342,7 @@ MonoBehaviour:
   - {fileID: 1046368741}
   - {fileID: 338594266}
   - {fileID: 2101840611}
-  CoolDownTime: 200000
+  CoolDownTime: 3
   MaxSpawnEnemyCount: 2
   BossSpawnCount: 10
   Boss:
