@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Progress;
 using UnityEngine.TextCore.Text;
+using TMPro;
 
 public class PlayerCharacter : BaseCharacter
 {
+    public Transform[] AddOnPos; 
     #region Movement
     private Vector2 _moveInput;
     public float MoveSpeed;
@@ -38,6 +40,9 @@ public class PlayerCharacter : BaseCharacter
     {
         base.Init(characterManager);// map,sound, Item, Character은 base를 상속 받을 것.이유는 GameManager를 상속할 것이고 GameManager에 접근하기 위해.상호 참조/
         InitializeSkills();
+        //characterManager.GetComponent< AddOnItem >().SpawnAddOn();
+
+
     }
 
     public void DeadProcess()
@@ -139,4 +144,44 @@ public class PlayerCharacter : BaseCharacter
             //}
         }
     }
+    public void SetInvincibility(bool invin)
+    {
+        if (invin)
+        {
+            if (invincibilityCoroutine != null)// null일 경우 멈춤
+            {
+                StopCoroutine(invincibilityCoroutine);
+            }
+
+            invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());// 해당 함수를 실행
+        }
+    }
+
+    private IEnumerator InvincibilityCoroutine()
+    {
+        Invincibility = true;// Invincibility의 ture로 변경
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();//sprite 참조
+
+        // 무적 지속 시간 (초)
+        float invincibilityDuration = 3f;
+        spriteRenderer.color = new Color(1, 1, 1, 0.5f);
+
+        // 무적이 해제될 때까지 대기
+        yield return new WaitForSeconds(invincibilityDuration);
+
+        // 타이머가 만료되면 무적을 비활성화
+        Invincibility = false;
+        spriteRenderer.color = new Color(1, 1, 1, 1f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            collision.gameObject.GetComponent<BaseItem>().OnGetItem(CharacterManager);
+            Destroy(collision.gameObject);
+
+        }
+    }
+
 }

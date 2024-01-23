@@ -146,8 +146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   AttackDamage: 1
+  isfreeze: 0
   bMustSpawnItem: 0
-  ExplodeFX: {fileID: 0}
+  isdesyroy: 0
+  ExplodeFX: {fileID: 1113964555280779987, guid: 52621c0814d663845ab762bd9f1679e8, type: 3}
+  MoveSpeed: 2
 --- !u!50 &4253800187162723536
 Rigidbody2D:
   serializedVersion: 4

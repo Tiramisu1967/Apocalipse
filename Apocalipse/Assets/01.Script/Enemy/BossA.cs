@@ -19,6 +19,8 @@ public class BossA : MonoBehaviour
 
     private void Start()
     {
+        Enemy enemy = GetComponent<Enemy>();
+        enemy.bMustSpawnItem = true;
         _originPosition = transform.position; // Boss 생성 시 Vector3 변수 _originPosition에 transform.position를 저장
         StartCoroutine(MoveDownAndStartPattern()); //
     }

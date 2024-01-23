@@ -42,18 +42,18 @@ public class Enemy : BaseCharacter
 
     public void Dead()
     {
-        if (!bIsDead)
+        if (!bIsDead)//bIsDead가 true일 때
         {
             //GameManager.Instance.EnemyDies();
 
-            //if (!bMustSpawnItem)
-            //    GameManager.Instance.ItemManager.SpawnRandomItem(0, 3, transform.position);
-            //else
-            //    GameManager.Instance.ItemManager.SpawnRandomItem(transform.position);
+            if (!bMustSpawnItem)//Item 무조건 출력인지 아닌지 구별
+                GameManager.Instance.ItemManager.SpawnRandomItem(0, 3, transform.position);
+            else
+                GameManager.Instance.ItemManager.SpawnRandomItem(transform.position);
 
-            bIsDead = true;
+            bIsDead = true;// 다시 true, 아이템이 한번만 나오게?
 
-            //Instantiate(ExplodeFX, transform.position, Quaternion.identity);
+            Instantiate(ExplodeFX, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

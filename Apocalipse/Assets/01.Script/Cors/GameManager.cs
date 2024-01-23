@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public CharacterManager CharacterManager; //CharacterManager 선언
     public MapManager MapManager;
     public EnemySpawnManager EnemySpawnManager;
+    public ItemManager ItemManager;
     [HideInInspector] public bool bStageCleared = false;
 
     private void Awake()  // 객체 생성시 최초 실행 (그래서 싱글톤을 여기서 생성)
