@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5242625745021944722}
   - component: {fileID: 332388855098919990}
-  - component: {fileID: 6277966425759079697}
+  - component: {fileID: -442718436369620388}
   m_Layer: 0
   m_Name: AddOn
   m_TagString: Player
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6277966425759079697
+--- !u!114 &-442718436369620388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

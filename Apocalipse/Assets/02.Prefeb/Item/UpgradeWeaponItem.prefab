@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4983394566358322130}
   - component: {fileID: 5440708405712571230}
   - component: {fileID: -6541056232860189884}
+  - component: {fileID: -9069587084989533068}
   m_Layer: 0
   m_Name: UpgradeWeaponItem
   m_TagString: Item
@@ -171,3 +172,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5833333, y: 0.41666666}
   m_EdgeRadius: 0
+--- !u!95 &-9069587084989533068
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196780925745394979}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b2ace699a3d70004b907aef2db62ed62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

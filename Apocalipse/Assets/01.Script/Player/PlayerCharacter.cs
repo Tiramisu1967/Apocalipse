@@ -9,8 +9,8 @@ using TMPro;
 
 public class PlayerCharacter : BaseCharacter
 {
-    public Transform[] AddOnPos;
-    public GameObject Add;
+    public  Transform[] AddOnPos;
+    public GameObject Prefab;
     #region Movement
     private Vector2 _moveInput;
     public float MoveSpeed;
@@ -41,16 +41,18 @@ public class PlayerCharacter : BaseCharacter
     {
         base.Init(characterManager);// map,sound, Item, Character은 base를 상속 받을 것.이유는 GameManager를 상속할 것이고 GameManager에 접근하기 위해.상호 참조/
         InitializeSkills();
-        if (GameInstance.instance.CurrentAddOnCount < 2)
+       
+        if (GameInstance.instance.CurrentAddOnCount > 0 && GameInstance.instance.CurrentAddOnCount < 3)
         {
-            for (int i = 1; i <= GameInstance.instance.CurrentAddOnCount; i++)
-            {
-                AddOnItem.SpawnAddOn(AddOnPos[GameInstance.instance.CurrentAddOnCount - 1].transform.position, AddOnItem.Add);
-            }
-        }
-        
-
-
+            for (int i = 0; i < GameInstance.instance.CurrentAddOnCount; i++)
+                {
+                     
+                    AddOnItem.SpawnAddOn(characterManager.Player.transform.position, Prefab, AddOnPos[i].transform);
+                    
+                }
+            
+            
+       }
     }
 
     public void DeadProcess()

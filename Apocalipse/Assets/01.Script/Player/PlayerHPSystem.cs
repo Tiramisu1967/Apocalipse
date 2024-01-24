@@ -52,8 +52,12 @@ public class PlayerHPSystem : MonoBehaviour
             }
             //GameManager.Instance.SoundManager.PlaySFX("Hit");
             Enemy enemy = GetComponent<Enemy>();
-            if (enemy.isdesyroy == false)    
-                Destroy(collision.gameObject);
+            if (enemy != null)
+            {
+                if (enemy.isdesyroy == false)
+                    Destroy(collision.gameObject);
+            }
+            
             
             
         }
