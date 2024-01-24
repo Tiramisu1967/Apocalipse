@@ -44,7 +44,10 @@ public class AddOn : MonoBehaviour
     private void detect()
     {
         GameObject[] taget = GameObject.FindGameObjectsWithTag("Enemy");
-
+        if(taget.Length <= 0) 
+        {
+            TagetPos = new Vector3(0, 100, 0);
+        }
         foreach (GameObject ta in taget)
         {
             if (ta.GetComponent<Meteor>())
