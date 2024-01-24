@@ -5,23 +5,22 @@ using UnityEngine.UIElements;
 
 public class AddOnItem : BaseItem
 {
-    public GameObject Add;
+    public static GameObject Add;
     public override void OnGetItem(CharacterManager characterManager)
     {
-
-        if (GameInstance.instance.CurrentAddOnCount <= 2) 
+         base.OnGetItem(characterManager);
+         SpawnAddOn(characterManager.Player.GetComponent<PlayerCharacter>().AddOnPos[GameInstance.instance.CurrentAddOnCount].transform.position, Add);
+        if (GameInstance.instance.CurrentAddOnCount < 2)
         {
-            Vector3 pos = characterManager.Player.GetComponent<PlayerCharacter>().AddOnPos[GameInstance.instance.CurrentAddOnCount - 1].transform.position;
-            SpawnAddOn(pos, Add, characterManager); 
+            GameInstance.instance.CurrentAddOnCount += 1;
         }
 
     }
 
 
-    static void SpawnAddOn(Vector3 pos, GameObject Add, CharacterManager characterManager)
+    public static void SpawnAddOn(Vector3 pos, GameObject Add)
     {
-        GameInstance.instance.CurrentAddOnCount += 1;
-        Debug.Log(GameInstance.instance.CurrentAddOnCount);
+       
         GameObject instance = Instantiate(Add, pos, Quaternion.identity);
         AddOn addOn = instance.AddComponent<AddOn>();
         addOn.count = GameInstance.instance.CurrentAddOnCount - 1;
