@@ -12,7 +12,9 @@ public class PlayerHPSystem : MonoBehaviour
 
     void Start()
     {
+        
         Health = GameInstance.instance.CurrentPlayerHP;
+
     }
     public void InitHealth()
     {

@@ -44,7 +44,7 @@ public class Enemy : BaseCharacter
     {
         if (!bIsDead)//bIsDead가 true일 때
         {
-            //GameManager.Instance.EnemyDies();
+            GameManager.Instance.EnemyDies();
 
             if (!bMustSpawnItem)//Item 무조건 출력인지 아닌지 구별
                 GameManager.Instance.ItemManager.SpawnRandomItem(0, 3, transform.position);
